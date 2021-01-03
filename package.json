@@ -1,9 +1,10 @@
 {
-  "name": "data-selfie-app",
+  "name": "contact-form",
   "version": "1.0.0",
   "description": "It takes picture and save in database",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jatin Gambhir",
