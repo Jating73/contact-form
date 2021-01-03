@@ -1,49 +1,9 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-
-    <!--AOS ANimation-->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <!--Custom CSS-->
-    <link rel="stylesheet" href="./css/style.css">
-
-
-    <title>Registration Form</title>
-  </head>
-  <body>
-    <!--nav-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.html">Contact Form</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="AdminPanel.html">Admin Panel</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <!--nav-->
-    
-    <!--Main Content-->>
+<%- include('partials/header'); -%>
+    <!--Main Content-->
     <section class="get_in_touch">
         <h1 class="title">get in touch</h1>
         <div class="container" data-aos="fade-right">
-            <form action="POST" id="contactForm" name="form" class="needs-validation" novalidate>
+            <form action="/submit" id="contactForm" name="form" class="needs-validation" novalidate method="post">
                 <div class="contact-form row" >
                     <div class="form-field col-lg-6">
                         <input type="text" class="form-control" id="floatingName" name="name">
@@ -56,7 +16,7 @@
                         </div>
                     </div>
                     <div class="form-field col-lg-6">
-                        <input type="email" class="form-control" id="floatingEmail" >
+                        <input type="email" class="form-control" id="floatingEmail" name="email">
                         <label for="floatingEmail">Email address</label>
                         <div class="valid-feedback">
                             Looks good!
@@ -66,7 +26,7 @@
                         </div>
                     </div>
                     <div class="form-field col-lg-6">
-                        <input type="text" class="form-control" id="floatingContact" >
+                        <input type="text" class="form-control" id="floatingContact" name="contact">
                         <label for="floatingContact" class="form-label">Mobile No.</label>
                         <div class="valid-feedback">
                             Looks good!
@@ -76,7 +36,7 @@
                         </div>
                     </div>
                     <div class="form-field col-lg-6">
-                        <input type="text" class="form-control" id="floatingWhatsapp" >
+                        <input type="text" class="form-control" id="floatingWhatsapp" name="wap">
                         <label for="floatingWhatsapp" class="form-label">WhatsApp No.</label>
                         <div class="valid-feedback">
                             Looks good!
@@ -86,7 +46,7 @@
                         </div>
                     </div>
                     <div class="form-field col-lg-6">
-                        <input type="text" class="form-control" id="floatingCollege" >
+                        <input type="text" class="form-control" id="floatingCollege" name="college">
                         <label for="floatingCollege" class="form-label">College Name</label>
                         <div class="valid-feedback">
                             Looks good!
@@ -96,7 +56,7 @@
                         </div>
                     </div>
                     <div class="form-field col-lg-6">
-                        <input type="text" class="form-control" id="floatingRefrence" >
+                        <input type="text" class="form-control" id="floatingRefrence" name="refrence">
                         <label for="floatingRefrence" class="form-label">Refrence</label>
                         <div class="valid-feedback">
                             Looks good!
@@ -106,7 +66,7 @@
                         </div>
                     </div>
                     <div class="form-field col-lg-6">
-                        <input type="text" class="form-control" id="floatingQualification" >
+                        <input type="text" class="form-control" id="floatingQualification" name="degree">
                         <label for="floatingQualification" class="form-label">Highest Qualification</label>
                         <div class="valid-feedback">
                             Looks good!
@@ -116,8 +76,7 @@
                         </div>
                     </div>
                     <div class="form-field col-lg-6">
-                        <select class="form-select" aria-label="Default select" onchange="getVal()">
-                            <option selected>Applied for which Internship type</option>
+                        <select class="form-select" aria-label="Default select" onchange="getVal()" name="intern">
                             <option value="Web Development Intern">Web Development Intern</option>
                             <option value="HR Intern">HR Intern</option>
                             <option value="Finance Intern">Finance Inten</option>
@@ -125,7 +84,7 @@
                         </select>
                     </div>
                     <div class="form-field col-lg-12">
-                        <input class="form-control" type="file" id="formFile" accept="application/pdf">
+                        <input class="form-control" type="file" id="formFile" accept="application/pdf" name="file"> 
                         <div class="valid-feedback">
                             Looks good!
                         </div>
@@ -149,32 +108,4 @@
             </form>
         </div>
     </section>
-
-    
-    <!--Bootstrap 5 Script-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-    
-    <!-- Popper.js first, then Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
-        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
-        crossorigin="anonymous"></script>
-
-    <!--AOS Animation-->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-    <!--Font Awesome Script-->
-    <script src="https://kit.fontawesome.com/2bc7320737.js" crossorigin="anonymous"></script>
-
-    <!--FireBase Script-->
-    <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script> 
-    <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-storage.js"></script>      
-    <script src="https://www.gstatic.com/firebasejs/8.1.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.1.0/firebase-database.js"></script>
-
-    <!--Custom Script-->
-    <script src="./js/main.js"></script>
-    </body>
-</html>
+<%- include('partials/footer'); -%>

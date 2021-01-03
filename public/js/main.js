@@ -1,3 +1,5 @@
+AOS.init();
+
 var firebaseConfig = {
     apiKey: "AIzaSyDai0_kidDKK7rtbAE93Zsy8KKc7MkYX-g",
     authDomain: "career-dream-contact-form.firebaseapp.com",
@@ -8,11 +10,11 @@ var firebaseConfig = {
     measurementId: "G-E4JJKCV3WE"
   };
   // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+// firebase.initializeApp(firebaseConfig);
 
 //Refrence messages Collection
-var messagesRef = firebase.database().ref('messages');
-var storageRef = firebase.storage().ref('messages');
+// var messagesRef = firebase.database().ref('messages');
+// var storageRef = firebase.storage().ref('messages');
 
 
 //Get Selected value
@@ -23,7 +25,7 @@ function getVal()
 }
 
 //Listen for Form Submit
-document.getElementById('contactForm').addEventListener('submit',submitForm);
+//document.getElementById('contactForm').addEventListener('submit',submitForm);
 
 //Submit Form
 function submitForm(e){
@@ -39,6 +41,27 @@ function submitForm(e){
     const degree=getInputVal('floatingQualification');
     const selected=getVal();
     const file = document.querySelector('#formFile').files[0];
+
+    //Checking validation
+        if(name=='' || email=='' || phone=='' || wap=='' || college=='' || refrence=='' || degree=='' || file.name=='')
+    {
+        document.querySelector('.fields').style.display='block';
+        setTimeout(function(){
+        document.querySelector('.fields').style.display='none';
+        },5000);
+        return;
+    }
+    else if(!name || !email)
+    {
+        document.querySelector('.valid').style.display='block';
+        setTimeout(function(){
+        document.querySelector('.valid').style.display='none';
+        },5000);
+        return;
+    }
+
+
+
     const filename=new Date()+ '-' +file.name
 
     const metadata={
