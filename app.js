@@ -34,7 +34,8 @@ app.post("/submit",(req,res)=>{
         intern:req.body.intern,
         file:req.body.file
       };
-    entries.push(data);  
+    entries.push(data);
+    res.redirect("/admin");  
 });
 
 app.listen(port,()=>{

@@ -23,26 +23,6 @@
                             <th>Qualification</th>
                             <th>Intenship Type</th>
                             <th>CV</th>
-                            <th>Details</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
-                        </tr>
-                        <tr>
-                            <td>Rohan</td>
-                            <td>rohan@gmail.com</td>
-                            <td>9876543210</td>
-                            <td>1234567899</td>
-                            <td>NIT Jamshedpur</td>
-                            <td>Riya Jain</td>
-                            <td>Btech</td>
-                            <td>Web Development</td>
-                            <td><a href=""><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a></td>
-                            <td><a href="" class="btn btn-sm btn-info btn-block" data-toggle="modal"
-                                    data-target="#details">Details</a></td>
-                            <td><a href="" class="btn btn-sm btn-warning btn-block" data-toggle="modal"
-                                    data-target="#editEmployee">Edit</a></td>
-                            <td><a href="" class="btn btn-sm btn-danger btn-block"
-                                    onclick="confirm('Are you sure you want to delete \'Rohan\'?')">Delete</a></td>
                         </tr>
                         <% entries.forEach((entry)=>{ %>
                             <% console.log(entry); %>
@@ -55,159 +35,14 @@
                                 <td> <%= entry.refrence %> </td>
                                 <td> <%= entry.degree %> </td>
                                 <td> <%= entry.intern %> </td>
-                                <td> <a href="<%= entry.form %>"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a> </td>
-                                <td><a href="" class="btn btn-sm btn-info btn-block" data-toggle="modal"
-                                    data-target="#details">Details</a></td>
-                                <td><a href="" class="btn btn-sm btn-warning btn-block" data-toggle="modal"
-                                        data-target="#editEmployee">Edit</a></td>
-                                <td><a href="" class="btn btn-sm btn-danger btn-block"
-                                        onclick="confirm('Are you sure you want to delete \'<%=entry.name%>\'?')">Delete</a></td>
+                                <td> <a href="<%= entry.file %>"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a> </td>
                             </tr>        
                         <% }); %>
                                 
                     </table>
                 </div>
             </div>
-            <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
-                    <li class="page-item disabled">
-                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">Next</a>
-                    </li>
-                </ul>
-            </nav>
         </div>
         <!-- Main-Content-->
     </section>    
-
-        <!--Add Intern Modal-->
-        <!-- <div class="modal fade" id="addEmployee" tabindex="-1" aria-labelledby="addEmployee" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Add Intern</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="mb-2">
-                                <input type="date" class="form-control form-control-sm" name="date" id="date" required>
-                            </div>
-                            <div class="mb-2">
-                                <input type="text" class="form-control form-control-sm" name="Name" id="Name"
-                                    placeholder="Employee Name" required>
-                            </div>
-                            <div class="mb-2">
-                                <input type="email" class="form-control form-control-sm" name="email" id="email"
-                                    placeholder="Employee Email" required>
-                            </div>
-                            <div class="mb-2">
-                                <input type="number" class="form-control form-control-sm" name="tel" id="tel"
-                                    placeholder="Employee Tel. No" required>
-                            </div>
-                            <div class="mb-2">
-                                <select name="designation" id="designation" class="form-control form-control-sm">
-                                    <option value="Web Developer">Web Developer</option>
-                                    <option value="Web Designer">Web Designer</option>
-                                    <option value="Software Developer">Software Developer</option>
-                                    <option value="Software Engineer">Software Engineer</option>
-                                </select>
-                            </div>
-                            <div class="mb-2">
-                                <button class="btn btn-success btn-block btn-sm">Add Intern</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <!--Add Intern Modal-->
-
-        <!--Detail Intern Modal-->
-        <div class="modal fade" id="details" tabindex="-1" aria-labelledby="details" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Intern Details</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <table class="table table-bordered table-responsive">
-                        <tr>
-                            <th>ID</th>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <th>Date of Joining</th>
-                            <td>23 July 2005</td>
-                        </tr>
-                        <tr>
-                            <th>Name</th>
-                            <td>Rohan</td>
-                        </tr>
-                        <tr>
-                            <th>Email</th>
-                            <td>rohan@yahoo.com</td>
-                        </tr>
-                        <tr>
-                            <th>Phone</th>
-                            <td>9845647856</td>
-                        </tr>
-                        <tr>
-                            <th>Job</th>
-                            <td>Web Designer</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <!--Detail Intern Modal-->
-
-        <!--Edit Employee Modal-->
-        <div class="modal fade" id="editEmployee" tabindex="-1" aria-labelledby="editEmployee" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Edit Employee</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="mb-2">
-                                <input value="23-July-2005" class="form-control form-control-sm" name="date" id="date"
-                                    required>
-                            </div>
-                            <div class="mb-2">
-                                <input value="Rohan" class="form-control form-control-sm" name="Name" id="Name" required>
-                            </div>
-                            <div class="mb-2">
-                                <input value="rohan@gmail.com" class="form-control form-control-sm" name="email" id="email"
-                                    required>
-                            </div>
-                            <div class="mb-2">
-                                <input value="9876543247" class="form-control form-control-sm" name="tel" id="tel" required>
-                            </div>
-                            <div class="mb-2">
-                                <input value="Web Developer" class="form-control form-control-sm" name="designation"
-                                    id="designation" required>
-                            </div>
-                            <div class="mb-2">
-                                <button class="btn btn-success btn-block btn-sm">Update Employee</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    <!--Edit Employee Modal-->
 <%- include("partials/footer"); -%>
