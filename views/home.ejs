@@ -3,80 +3,38 @@
     <section class="get_in_touch">
         <h1 class="title">get in touch</h1>
         <div class="container" data-aos="fade-right">
-            <form action="/submit" id="contactForm" name="form" class="needs-validation" novalidate method="post">
                 <div class="contact-form row" >
                     <div class="form-field col-lg-6">
-                        <input type="text" class="form-control" id="floatingName" name="name">
+                        <input type="text" class="form-control" id="floatingName" name="name" autocomplete="off" >
                         <label for="floatingName">Name</label>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-                        <div class="invalid-feedback">
-                            Name should be 2 to 20 characters.
-                        </div>
                     </div>
                     <div class="form-field col-lg-6">
-                        <input type="email" class="form-control" id="floatingEmail" name="email">
+                        <input type="email" class="form-control" id="floatingEmail" name="email" autocomplete="off">
                         <label for="floatingEmail">Email address</label>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-                        <div class="invalid-feedback">
-                            Please provide a valid email address.
-                        </div>
                     </div>
                     <div class="form-field col-lg-6">
-                        <input type="text" class="form-control" id="floatingContact" name="contact">
+                        <input type="number" class="form-control" id="floatingContact" name="contact" autocomplete="off">
                         <label for="floatingContact" class="form-label">Mobile No.</label>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-                        <div class="invalid-feedback">
-                            Please enter valid mobile number
-                        </div>
                     </div>
                     <div class="form-field col-lg-6">
-                        <input type="text" class="form-control" id="floatingWhatsapp" name="wap">
+                        <input type="number" class="form-control" id="floatingWhatsapp" name="wap" autocomplete="off">
                         <label for="floatingWhatsapp" class="form-label">WhatsApp No.</label>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-                        <div class="invalid-feedback">
-                            Please enter valid mobile number
-                        </div>
                     </div>
                     <div class="form-field col-lg-6">
-                        <input type="text" class="form-control" id="floatingCollege" name="college">
+                        <input type="text" class="form-control" id="floatingCollege" name="college" autocomplete="off">
                         <label for="floatingCollege" class="form-label">College Name</label>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-                        <div class="invalid-feedback">
-                            Enter your College Name
-                        </div>
                     </div>
                     <div class="form-field col-lg-6">
-                        <input type="text" class="form-control" id="floatingRefrence" name="refrence">
+                        <input type="text" class="form-control" id="floatingRefrence" name="refrence" autocomplete="off">
                         <label for="floatingRefrence" class="form-label">Refrence</label>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-                        <div class="invalid-feedback">
-                            Please enter your Refrence Name
-                        </div>
                     </div>
                     <div class="form-field col-lg-6">
-                        <input type="text" class="form-control" id="floatingQualification" name="degree">
+                        <input type="text" class="form-control" id="floatingQualification" name="degree" autocomplete="off">
                         <label for="floatingQualification" class="form-label">Highest Qualification</label>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-                        <div class="invalid-feedback">
-                            Please enter your highest qualification
-                        </div>
                     </div>
                     <div class="form-field col-lg-6">
-                        <select class="form-select" aria-label="Default select" onchange="getVal()" name="intern">
+                        <select class="form-select" aria-label="Default select" name="intern">
+                            <option value="Select Internship Type">Select Internship Type</option>
                             <option value="Web Development Intern">Web Development Intern</option>
                             <option value="HR Intern">HR Intern</option>
                             <option value="Finance Intern">Finance Inten</option>
@@ -85,27 +43,13 @@
                     </div>
                     <div class="form-field col-lg-12">
                         <input class="form-control" type="file" id="formFile" accept="application/pdf" name="file"> 
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-                        <div class="invalid-feedback">
-                            Kindly Attach CV/Resume in pdf file
-                        </div>
                     </div>
-                    <div class="alert alert-success" role="alert">
-                        Your message has been sent!
+                    <div class="alert alert-dark" role="alert" id="alert">
                     </div>
-                    <div class="alert alert-danger fields" role="alert">
-                        Please fill all the fields!
-                    </div>
-                    <div class="alert alert-danger valid" role="alert">
-                        Please fill valid data!
-                    </div>    
                     <div class="form-field col-lg-12 text-center" >
-                        <button class="btn btn-primary" id="button" type="submit">Submit</button>
+                        <button class="btn btn-primary" id="submitbtn">Submit</button>
                     </div>
                 </div>
-            </form>
         </div>
     </section>
 <%- include('partials/footer'); -%>

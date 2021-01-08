@@ -7,37 +7,44 @@ const port = process.env.PORT || 3000;
 
 app.set('view engine', 'ejs');
 
-app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
+app.use(express.json({ limit: '2mb' }))
 
 let entries = [];
 
-app.get("/",(req,res)=>{
+app.get("/", (req, res) => {
     res.render("home");
-  });
-
-app.get("/admin",(req,res)=>{
-    res.render("admin",{
-        entries:entries
-    });
-})  
-
-app.post("/submit",(req,res)=>{
-    const data={
-        name:req.body.name,
-        email:req.body.email,
-        contact:req.body.contact,
-        whatsapp:req.body.wap,
-        college:req.body.college,
-        refrence:req.body.refrence,
-        degree:req.body.degree,
-        intern:req.body.intern,
-        file:req.body.file
-      };
-    entries.push(data);
-    res.redirect("/admin");  
 });
 
-app.listen(port,()=>{
-    console.log("Listening at ",port);
+app.get("/admin", (req, res) => {
+    res.render("admin", {
+        entries: entries
+    });
+})
+
+app.post("/submit", (req, res) => {
+    const data = req.body;
+    if (data.Name === '' || data.email === '' || data.phone === '' || data.wap === '' || data.college === '' || data.refrence === '' || data.degree === '') {
+        res.status(400).json({ error: 'Fill all the fields' })
+        return
+    }
+    const finalData={
+        name:data.Name,
+        email:data.email,
+        contact:data.phone,
+        whatsapp:data.wap,
+        college:data.college,
+        refrence:data.refrence,
+        degree:data.degree,
+        intern:data.intern,
+        file:data.filename
+    };
+    entries.push(finalData);
+    res.status(200).json({
+        message:'Submitted Successfully!'
+    })
+});
+
+app.listen(port, () => {
+    console.log("Listening at ", port);
 })

@@ -104,13 +104,7 @@ body{
     color: #fdfafa;
     transition: 0.5s all ease-in;
 }
-.alert-success {
-    color: #fff3f3;
-    background-color: #13ef57;
-    border-color: #badbcc;
-    display: none;
-}
-.alert-danger,.valid{
+.alert{
     display: none;
 }
 
