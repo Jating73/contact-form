@@ -1,7 +1,7 @@
 {
   "name": "contact-form",
   "version": "1.0.0",
-  "description": "It takes picture and save in database",
+  "description": "It saves form data and admin can see it",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
